@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomasse - Énergie renouvelable</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e2f;
+            background-color: #f9fef7;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2b6e3c);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .leaf-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e4a2f;
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #3e9f5c;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e0f0e0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #1c6e3a;
+            margin-bottom: 28px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #5cb85c;
+            border-radius: 3px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #3e9f5c;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #2c5e2a;
+        }
+
+        .badge {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+
+        .stat {
+            flex: 1;
+            background: #eef6ea;
+            padding: 20px;
+            border-radius: 24px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e4a2f;
+        }
+
+        footer {
+            background: #1a2e1a;
+            color: #ccc;
+            text-align: center;
+            padding: 32px 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #9bdf9b;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3e9f5c;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 24px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2b7a44;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .nav-links { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="leaf-icon"><i class="fas fa-leaf"></i></div>
+    <div class="container">
+        <h1>Biomasse &nbsp;🌱</h1>
+        <p>Une source d’énergie renouvelable, propre et durable issue de la matière organique.</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-links">
+            <a href="#definition">Définition</a>
+            <a href="#types">Types</a>
+            <a href="#avantages">Avantages</a>
+            <a href="#inconvenients">Limites</a>
+            <a href="#applications">Applications</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Définition -->
+    <section id="definition">
+        <div class="container">
+            <h2>📖 Qu'est‑ce que la biomasse ?</h2>
+            <div class="grid-2">
+                <div>
+                    <p style="font-size:1.05rem">La biomasse désigne l’ensemble des matières organiques d’origine végétale ou animale, qui peuvent être transformées en énergie (chaleur, électricité, carburant).</p>
+                    <p>Elle constitue une alternative aux énergies fossiles car elle est <strong>renouvelable</strong> : le carbone émis lors de sa combustion est celui que les plantes ont absorbé durant leur croissance (cycle court).</p>
+                    <a href="#" class="btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Cycle vertueux</h3>
+                    <p>Photosynthèse → récolte → conversion énergétique → libération de CO₂ → nouvelle absorption par les végétaux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de biomasse -->
+    <section id="types" style="background-color: #f4faf1;">
+        <div class="container">
+            <h2>🌾 Les principales sources</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-tree"></i>
+                    <h3>Biomasse lignocellulosique</h3>
+                    <p>Bois, résidus agricoles (paille, tiges), cultures dédiées (miscanthus, taillis).</p>
+                    <span class="badge">+ utilisée pour la chaleur</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Biomasse humide</h3>
+                    <p>Déchets verts, effluents d’élevage, boues de stations d’épuration → méthanisation.</p>
+                    <span class="badge">biogaz & digestat</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-oil-can"></i>
+                    <h3>Biocarburants</h3>
+                    <p>Colza, tournesol, betterave → biodiesel, bioéthanol.</p>
+                    <span class="badge">mobilité durable</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trash-alt"></i>
+                    <h3>Déchets organiques ménagers</h3>
+                    <p>Épluchures, restes alimentaires, déchets verts de jardin.</p>
+                    <span class="badge">valorisation énergétique</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages -->
+    <section id="avantages">
+        <div class="container">
+            <h2>✅ Avantages de la biomasse</h2>
+            <div class="grid-2">
+                <div>
+                    <ul style="list-style-type: none;">
+                        <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#3e9f5c; margin-right: 12px;"></i> <strong>Renouvelable</strong> – si gérée durablement.</li>
+                        <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#3e9f5c; margin-right: 12px;"></i> <strong>Neutre en CO₂</strong> – respecte le bilan carbone naturel.</li>
+                        <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#3e9f5c; margin-right: 12px;"></i> <strong>Réduit les déchets</strong> – valorisation des résidus agricoles et urbains.</li>
+                        <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#3e9f5c; margin-right: 12px;"></i> <strong>Disponible localement</strong> – diminue la dépendance énergétique.</li>
+                    </ul>
+                </div>
+                <div class="stat-grid" style="display:flex; flex-direction:column; gap:16px;">
+                    <div class="stat">
+                        <div class="stat-number">~55 %</div>
+                        <div>de l'énergie renouvelable en Europe (chaleur)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10 GW</div>
+                        <div>puissance électrique installée à partir de biomasse en France</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inconvénients / limites -->
+    <section id="inconvenients" style="background-color: #fef5e8;">
+        <div class="container">
+            <h2>⚠️ Limites & défis</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Rendement énergétique</h3>
+                    <p>Moindre comparé aux combustibles fossiles pour certaines filières.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Concurrence des sols</h3>
+                    <p>Risque de déforestation ou de conflit avec l’alimentation humaine.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-smog"></i>
+                    <h3>Pollution locale</h3>
+                    <p>Émission de particules fines si combustion incomplète (nécessite des filtres).</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Coûts logistiques</h3>
+                    <p>Collecte, transport, stockage de la matière volumineuse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications concrètes -->
+    <section id="applications">
+        <div class="container">
+            <h2>🏭 Où utilise‑t‑on la biomasse ?</h2>
+            <div class="grid-2">
+                <div>
+                    <p><i class="fas fa-fire"></i> <strong>Chauffage collectif</strong> – réseaux de chaleur urbains (bois déchiqueté).</p>
+                    <p><i class="fas fa-bolt"></i> <strong>Production d’électricité</strong> – centrales biomasse (ORC, cogénération).</p>
+                    <p><i class="fas fa-gas-pump"></i> <strong>Biocarburants</strong> – bioéthanol (SP95-E10), biodiesel (B7, B30).</p>
+                    <p><i class="fas fa-charging-station"></i> <strong>Biogaz</strong> – injection dans le réseau gaz ou production d’électricité.</p>
+                </div>
+                <div style="background: #e3f2e1; border-radius: 24px; padding: 20px; text-align: center;">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color:#2b6e3c;"></i>
+                    <p style="margin-top: 12px;"><strong>Cas concret :</strong> En Suède, la biomasse fournit près de 30% de l'énergie primaire, principalement pour le chauffage et l'électricité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p><i class="fas fa-seedling"></i> La biomasse, un pilier de la transition énergétique française et mondiale.</p>
+        <p style="margin-top: 16px;">© 2025 - Site informatif sur la biomasse | Tous droits fictifs</p>
+        <p><a href="#">🔁 Retour en haut</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
